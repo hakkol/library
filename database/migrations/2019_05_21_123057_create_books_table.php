@@ -15,10 +15,10 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
-            $table->smallInteger('year');
-            $table->string('image_path');
-            $table->integer('count');
+            $table->string('title')->nullable(NULL);
+            $table->smallInteger('year')->nullable(NULL);
+            $table->string('image_path')->nullable(NULL);
+            $table->string('count')->nullable(NULL);
             $table->timestamps();
         });
     }
