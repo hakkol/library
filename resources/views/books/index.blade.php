@@ -41,7 +41,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="text-center">
+                    <div class="d-flex justify-content-center">
                         {!! $books->appends(Request::input())->links() !!}
                     </div>
                 @else
