@@ -12,23 +12,6 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav js-navbar">
-                        <li>
-                            <a href="{{ url('/') }}">
-                                Home
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-
     @yield('content')
 
     <!-- JavaScripts -->
