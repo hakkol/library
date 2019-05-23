@@ -12,6 +12,28 @@
             </div>
 
             <div class="col-md-12">
+                <form
+                    class="js-disable-when-submit form-group"
+                    action="{{ action('BookController@index') }}"
+                    method="GET"
+                >
+                    <div class="form-group">
+                        <label for="search">Author/Book</label>
+                        <input
+                            type="text"
+                            id="search"
+                            name="search"
+                            class="form-control"
+                            require
+                            value="{{ request()->search }}"
+                        >
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Search</button>
+                </form>
+            </div>
+
+            <div class="col-md-12">
                 @if (!$books->isEmpty())
                     <table class="table table-hover">
                         <thead>
@@ -20,6 +42,7 @@
                                 <th>Authors</th>
                                 <th>Year</th>
                                 <th>Count</th>
+                                <th></th>
                                 <th>Created at</th>
                             </tr>
                         </thead>
@@ -36,6 +59,13 @@
                                     </td>
                                     <td>{{ $book->year }}</td>
                                     <td>{{ $book->count }}</td>
+                                    <th>
+                                        <img
+                                            src="{{ url($book->image_path) }}"
+                                            alt="{{ $book->title }}"
+                                            width="100px"
+                                        >
+                                    </th>
                                     <td>{{ $book->created_at }}</td>
                                 </tr>
                             @endforeach
